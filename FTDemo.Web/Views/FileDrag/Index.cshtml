@@ -1,0 +1,79 @@
+﻿@using FTDemo.Common.Models
+@model List<FileUploadModel>
+@{
+    ViewData["Title"] = "File Drag";
+}
+<link href="~/css/basic.min.css" rel="stylesheet" />
+<link href="~/css/dropzone.min.css" rel="stylesheet" />
+<h1>File Drag Demo</h1>
+<div class="row">
+    <div class="col-md-9">
+        <div id="dropzone">
+            <form action="/FileDrag/Upload" class="dropzone needsclick dz-clickable" id="uploader">
+                <div class="dz-message needsclick">
+                    Drop files here or click to upload.<br>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<br />
+
+@if (Model != null && Model.Count > 0)
+{
+    <div>
+        <table class="table-responsive table">
+            <thead>
+                <tr>
+                    <th>
+                        File Name
+                    </th>
+                    <th>
+                        Created Date
+                    </th>
+                    <th>
+                        Download
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.FileName
+                        </td>
+                        <td>
+                            @item.CreatedDate
+                        </td>
+                        <td>
+                            <a href="/FileDrag/DownloadFile?filename=@item.FileName"> Download</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
+
+@section Scripts{
+    <script src="~/js/dropzone.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            Dropzone.options.uploader = {
+                paramName: "file",
+                maxFilesize: 1,
+                accept: function (file, done) {
+                    if (file.name == "test.jpg") {
+                        alert("Can't upload a test file.");
+                    }
+                    else {
+                        //Show a confirm alert and display the image on the page.
+                    }
+                }
+            };
+        });
+    </script>
+}

@@ -1,0 +1,29 @@
+﻿@model List<FTDemo.Database.Entities.AppUser>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>User Management</h1>
+<table>
+    <thead>
+        <tr>
+            <td style="width:30%">Firstname</td>
+            <td style="width:30%">Lastname</td>
+            <td style="width:30%">Email</td>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Count > 0)
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.FirstName</td>
+                    <td>@item.LastName</td>
+                    <td>@item.Email</td>
+                </tr>
+            }
+        }
+
+    </tbody>
+</table>

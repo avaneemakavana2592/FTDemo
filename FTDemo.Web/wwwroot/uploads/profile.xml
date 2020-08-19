@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+	<publishProfile profileName="HiggertyPortalDev - Web Deploy" 
+					publishMethod="MSDeploy" 
+					publishUrl="higgertyportaldev.scm.azurewebsites.net:443" 
+					msdeploySite="HiggertyPortalDev" 
+					userName="$HiggertyPortalDev" 
+					userPWD="x3zqSZ28MylQditQseec4i8yciXQfXBlwJk80BfwqDHlGJx6cCQfGw7WJGm7" 
+					destinationAppUrl="http://higgertyportaldev.azurewebsites.net" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="http://windows.azure.com" webSystem="WebSites">
+		<databases />
+	</publishProfile>
+	<publishProfile profileName="HiggertyPortalDev - FTP" publishMethod="FTP"
+					publishUrl="ftp://waws-prod-yt1-013.ftp.azurewebsites.windows.net/site/wwwroot"
+					ftpPassiveMode="True" 
+					userName="HiggertyPortalDev\$HiggertyPortalDev"
+					userPWD="x3zqSZ28MylQditQseec4i8yciXQfXBlwJk80BfwqDHlGJx6cCQfGw7WJGm7"
+					destinationAppUrl="http://higgertyportaldev.azurewebsites.net" 
+					SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" 
+					controlPanelLink="http://windows.azure.com" webSystem="WebSites">
+		<databases />
+	</publishProfile>
+	<publishProfile profileName="HiggertyPortalDev - ReadOnly - FTP" publishMethod="FTP" 
+					publishUrl="ftp://waws-prod-yt1-013dr.ftp.azurewebsites.windows.net/site/wwwroot" 
+					ftpPassiveMode="True" 
+					userName="HiggertyPortalDev\$HiggertyPortalDev" 
+					userPWD="x3zqSZ28MylQditQseec4i8yciXQfXBlwJk80BfwqDHlGJx6cCQfGw7WJGm7" destinationAppUrl="http://higgertyportaldev.azurewebsites.net" SQLServerDBConnectionString="" mySQLDBConnectionString="" hostingProviderForumLink="" controlPanelLink="http://windows.azure.com" webSystem="WebSites">
+		<databases />
+	</publishProfile>
+</publishData>

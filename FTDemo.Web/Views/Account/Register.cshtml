@@ -1,0 +1,87 @@
+﻿@model FTDemo.Web.Models.User.RegisterModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Skill Test - Login</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/css/bootstrap.css" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+</head>
+<body class="bg-light login-page">
+    <div class="overlay-bg"></div>
+    <div class="container vh-100 d-flex align-items-center mt-5">
+        <div class="card card-login mx-auto text-center bg-white col-lg-5 col-md-6 p-0 mt-5">
+            <div class="mx-auto pt-4">
+                <div class="clearfix">
+                    APP
+                </div>
+                <h2 class="text-dark mb-2"> Register </h2>
+                <div style="color:red;">
+                    @if (!string.IsNullOrWhiteSpace(ViewBag.Error))
+                    {
+                        <span>@ViewBag.Error</span>
+                    }
+                </div>
+            </div>
+            <div class="card-body">
+                @if (!Model.IsSuccess)
+                {
+                    <form method="post">
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="email" asp-for="Email" class="form-control" placeholder="User Name">
+                        </div>
+                        <span asp-validation-for="Email" class="text-left btn-block"></span>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" asp-for="FirstName" class="form-control" placeholder="First Name">
+                        </div>
+                        <span asp-validation-for="FirstName" class="text-left btn-block"></span>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" asp-for="LastName" class="form-control" placeholder="Last Name">
+                        </div>
+                        <span asp-validation-for="LastName" class="text-left btn-block"></span>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            </div>
+                            <input type="password" asp-for="Password" class="form-control" placeholder="Password">
+                        </div>
+                        <span asp-validation-for="Password" class="text-left btn-block"></span>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                            </div>
+                            <input type="password" asp-for="ConfirmPassword" class="form-control" placeholder="Confirm Password">
+                        </div>
+                        <span asp-validation-for="ConfirmPassword" class="text-left btn-block"></span>
+                        <div class="form-group d-flex align-items-center justify-content-between">
+                            <a href="/" class="btn-link text-dark">Back</a>
+                            <input type="submit" value="Register" class="btn btn-info">
+                        </div>
+                    </form>
+                }
+                else
+                {
+                    <div>You are registered successfully. Please <a href="/Account/Login">login</a> using your credentials. </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>
